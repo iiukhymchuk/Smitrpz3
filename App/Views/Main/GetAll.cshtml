@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Queries";
+}
+
+<h3>Queries</h3>
+<ul>
+    @foreach (var query in Model)
+    {
+    <li class="nav-item">
+        @{ 
+            var page = "/Main/Get?query=";
+            var link = page + Uri.EscapeDataString(query);
+        }
+        <a class="nav-link text-dark" href="@link"><span style="white-space: pre-wrap;">@query</span></a>
+    </li>
+    }
+</ul>

@@ -1,0 +1,45 @@
+﻿@model QueryResult
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<span style="white-space: pre-wrap;">@Model.Query</span>
+<br />
+<br />
+<br />
+
+@if (Model != null && Model.Values != null && Model.Values.Count() != 0 && Model.IsCorrect)
+{
+    <h5>Query result:</h5>
+    <br />
+    <table class="table">
+        <tr>
+            @foreach (var result in Model.Values)
+            {
+                @foreach (var prop in result)
+                {
+                    <th scope="col">@prop.Key</th>
+                }
+                break;
+            }
+        </tr>
+        @foreach (var result in Model.Values)
+        {
+            <tr>
+                @foreach (var prop in result)
+                {
+                    <td>@prop.Value</td>
+                }
+            </tr>
+        }
+    </table>
+}
+else if (!Model.IsCorrect)
+{
+    <h5>Incorrect sql query</h5>
+}
+else
+{
+    <h5>No results</h5>
+}

@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Scripts\KP01 - 1.CreateTableExam.sql" />
+    <None Remove="Scripts\KP01 - 2.CreateTableStudent.sql" />
+    <None Remove="Scripts\KP1\KP01 - 3.FillTableValues.sql" />
+    <None Remove="Scripts\KP1\KP01 - 4.CreateTableDcDiscipline.sql" />
+    <None Remove="Scripts\KP1\KP01 - 5.CreateTableDcSubdivision.sql" />
+    <None Remove="Scripts\KP1\KP01 - 6.CreateTableDcDuties.sql" />
+    <None Remove="Scripts\KP2\KP02 - 4.FillNewTables.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\KP1\KP01 - 3.FillTableValues.sql" />
+    <EmbeddedResource Include="Scripts\KP1\KP01 - 2.ChangeTableDcDuties.sql" />
+    <EmbeddedResource Include="Scripts\KP1\KP01 - 1.CreateInitialTables.sql" />
+    <EmbeddedResource Include="Scripts\KP2\KP02 - 4.FillNewTables.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\App.config" Link="App.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup" Version="4.2.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview5.19224.8" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,2 @@
+﻿ALTER TABLE DcDuties
+ADD Actuality VARCHAR(5) NULL;
